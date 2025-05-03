@@ -1,19 +1,32 @@
 {
-  "name": "squad-rcon",
-  "version": "1.1.8",
+  "name": "squad-rcon-serverless",
+  "version": "1.0.0",
+  "description": "adapt for severless e.g. cloudflare",
+  "keywords": [
+    "cloudflare",
+    "squad",
+    "rcon"
+  ],
+  "homepage": "https://github.com/iamalone98/squad-rcon#readme",
+  "bugs": {
+    "url": "https://github.com/iamalone98/squad-rcon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamalone98/squad-rcon.git"
+  },
+  "license": "MIT",
+  "author": "I-Am Alone <iamalone9828@gmail.com>",
+  "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "repository": "https://github.com/iamalone98/squad-rcon.git",
-  "author": "I-Am Alone <iamalone9828@gmail.com>",
-  "license": "MIT",
-  "type": "module",
   "scripts": {
     "start": "nodemon src/index.ts",
-    "build": "rollup -c rollup.config.js",
+    "build": "tsc",
     "lint:check": "tsc --noEmit && eslint --ext .ts src/ && prettier src/ --check --ignore-unknown",
     "lint:format": "eslint --fix --ext .ts src/ && prettier src/ --write --ignore-unknown",
     "prepare": "husky install",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "chalk": "^5.3.0",

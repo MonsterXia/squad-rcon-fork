@@ -156,7 +156,7 @@ export class Rcon extends EventEmitter {
     this.client = net.createConnection({
       host: this.host,
       port: this.port,
-      noDelay: true,
+      noDelay: false,
     });
 
     this.logger.log('Connecting');
